@@ -11,6 +11,9 @@
 		53EEFB8728F0AB24007DCBBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEFB8628F0AB24007DCBBD /* ContentView.swift */; };
 		53EEFB8928F0AB26007DCBBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EEFB8828F0AB26007DCBBD /* Assets.xcassets */; };
 		53EEFB8C28F0AB26007DCBBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EEFB8B28F0AB26007DCBBD /* Preview Assets.xcassets */; };
+		53EEFB9A28F0B38C007DCBBD /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 53EEFB9928F0B38C007DCBBD /* CodeScanner */; };
+		53EEFB9C28F0BC97007DCBBD /* qr_code_scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEFB9B28F0BC97007DCBBD /* qr_code_scanner.swift */; };
+		53EEFB9E28F0BEAC007DCBBD /* main_menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEFB9D28F0BEAC007DCBBD /* main_menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		53EEFB8628F0AB24007DCBBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53EEFB8828F0AB26007DCBBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53EEFB8B28F0AB26007DCBBD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		53EEFB9B28F0BC97007DCBBD /* qr_code_scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qr_code_scanner.swift; sourceTree = "<group>"; };
+		53EEFB9D28F0BEAC007DCBBD /* main_menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main_menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53EEFB9A28F0B38C007DCBBD /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +61,8 @@
 				53EEFB8628F0AB24007DCBBD /* ContentView.swift */,
 				53EEFB8828F0AB26007DCBBD /* Assets.xcassets */,
 				53EEFB8A28F0AB26007DCBBD /* Preview Content */,
+				53EEFB9B28F0BC97007DCBBD /* qr_code_scanner.swift */,
+				53EEFB9D28F0BEAC007DCBBD /* main_menu.swift */,
 			);
 			path = restaurant_app;
 			sourceTree = "<group>";
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = restaurant_app;
+			packageProductDependencies = (
+				53EEFB9928F0B38C007DCBBD /* CodeScanner */,
+			);
 			productName = restaurant_app;
 			productReference = 53EEFB8128F0AB24007DCBBD /* restaurant_app.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 53EEFB7828F0AB24007DCBBD;
+			packageReferences = (
+				53EEFB9828F0B38C007DCBBD /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 53EEFB8228F0AB24007DCBBD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53EEFB9C28F0BC97007DCBBD /* qr_code_scanner.swift in Sources */,
 				53EEFB8728F0AB24007DCBBD /* ContentView.swift in Sources */,
 				53EEFB8528F0AB24007DCBBD /* restaurant_appApp.swift in Sources */,
+				53EEFB9E28F0BEAC007DCBBD /* main_menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +287,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"restaurant_app/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +316,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"restaurant_app/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53EEFB9828F0B38C007DCBBD /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53EEFB9928F0B38C007DCBBD /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53EEFB9828F0B38C007DCBBD /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53EEFB7928F0AB24007DCBBD /* Project object */;
 }

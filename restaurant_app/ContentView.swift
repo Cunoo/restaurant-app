@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Color(red: 233/255, green: 183/255, blue:34/255)
+            .ignoresSafeArea(.all)
     }
 }
 
