@@ -11,8 +11,10 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        Color(red: 233/255, green: 183/255, blue:34/255)
-            .ignoresSafeArea(.all)
+        VStack{
+            
+            qr_code_scanner()
+        }
     }
 }
 

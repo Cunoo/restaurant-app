@@ -10,26 +10,38 @@ import CodeScanner
 
 struct qr_code_scanner: View {
     @State private var isShowingScanner = false
+    @State public var ScannerSuccess = false
     
     var body: some View {
-        Button{
-            isShowingScanner = true
-        } label:{
-            Label("Scan", systemImage: "qrcode.viewfinder")
-        }
-        .sheet(isPresented: $isShowingScanner){
-            CodeScannerView(codeTypes: [.qr], simulatedData: "TestQRScan", completion: handelScan)
-                // add more code
+        VStack{
+            Text("Vitaj v aplikácii ORDOMI")
+            Button{
+                isShowingScanner = true
+            } label:{
+                Label("SCAN", systemImage: "qrcode.viewfinder")
+            }
+            .sheet(isPresented: $isShowingScanner){ //opening scanner
+                CodeScannerView(codeTypes: [.qr], simulatedData: "QRcodeScan\n", completion: handelScan)
+                    
+                    // add more code
+            }//.navigationBarBackButtonHidden(true)//hide navigationBarBackButton
             
-        }
+            //open another view
+            if ScannerSuccess{
+                main_menu()
+            }
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255)).ignoresSafeArea()
     }
+    
     func handelScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
         switch result {
         case .success(let result):
-            var details = result.string.components(separatedBy: "\n")
-            details[0] = "Your scan was succesfull"
-        
+            //var details = result.string.components(separatedBy: "\n")
+            //details[0] = "Your scan was succesfull"
+            ScannerSuccess = true
             
         case .failure(let error):
             print("Scanning failed : \(error.localizedDescription)")
@@ -38,8 +50,12 @@ struct qr_code_scanner: View {
     }
 }
 
+
 struct qr_code_scanner_Previews: PreviewProvider {
     static var previews: some View {
-        qr_code_scanner()
+        Group {
+            
+            qr_code_scanner()
+        }
     }
 }
