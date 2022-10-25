@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct main_menu: View {
-    @State private var isQuit = false
-    @State private var test = false
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var isShowingDetailView = false
+
     var body: some View {
-        
+        NavigationView {
             VStack{
                 //Buttons
                 Button("PRIVOLAŤ BARMANA", action: {})
@@ -21,16 +20,25 @@ struct main_menu: View {
                     .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
                     .clipShape(Capsule())
                     .foregroundColor(.white)
-                    
-                    
-                Button("MENU", action: {})
                 
-                    .padding()
+                    
+                            NavigationLink(destination: Foods(), isActive: $isShowingDetailView) {
+                                Text("JEDALNICEK")
+                            }
+                            .padding()
+                            .frame(width: 200, height: 50)
+                            .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
+                            .clipShape(Capsule())
+                            .foregroundColor(.white)
+                            //.navigationTitle("Navigation")
+                        
+                
+                    /*.padding()
                     .frame(width: 200, height: 50)
                     .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
                     .clipShape(Capsule())
-                    .foregroundColor(.white)
-                
+                    .foregroundColor(.white)*/
+            
                 
                 Button("STAV OBJEDNÁVKY", action: {})
                 
@@ -41,7 +49,7 @@ struct main_menu: View {
                     .foregroundColor(.white)
 
                 Button("ODÍSŤ") {
-                    isQuit = true
+                    //go to qrcode scanner
                     let window = UIApplication
                         .shared
                         .connectedScenes
@@ -57,14 +65,10 @@ struct main_menu: View {
                     .clipShape(Capsule())
                     .foregroundColor(.white)
                 
-                /*if isQuit{
-                    qr_code_scanner()
-                    
-                }*/
-                
         
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255)).ignoresSafeArea()
+        }
     }
 }
 

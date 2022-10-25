@@ -1,0 +1,70 @@
+{
+    "Burgre": [
+        {
+            "name": "Hovadzi Burger",
+            "description": "Najlepsi burger na svete, uhorka, cibula, majoneza, masko a tak dalej",
+            "alergens": "1, 3, 6"
+        },
+        {
+            "name": "Kuraci Burger \"Mexiko\"",
+            "description": "noo dajaky fajny burger s kuracim masom, salsa, fazula, chedar atd atd",
+            "alergens": "2, 6"
+        },
+        {
+            "name": "Alice burger",
+            "description": "\u0160ifruvanie, dresing Ahoj Bobe",
+            "alergens": "FBI"
+        }
+    ],
+    "Polievky": [
+        {
+            "name": "Paradajkova polievka",
+            "description": "Mnam mnam polievka z verstvych paradajok s bazalkovym pestom a syrom hehe",
+            "alergens": "2, 6"
+        },
+        {
+            "name": "Borsc",
+            "description": "mnam mnam dobry borsc",
+            "alergens": "2"
+        }
+    ],
+    "Pizza": [
+        {
+            "name": "Pizza Hawaii",
+            "description": "ked nevies aka je dobra pizza tak si daj tuto hawaii s ananasom ",
+            "alergens": "3, 6"
+        },
+        {
+            "name": "Pizza Bruno",
+            "description": "paradajky, sunka, syr, kukurica, fazula, hrach, pomelo, kiwi",
+            "alergens": "1, 6"
+        },
+        {
+            "name": "Pizza Corleone",
+            "description": "paradajky,sunky,syr,salama,olivy a tak dalej",
+            "alergens": "1,3"
+        },
+        {
+            "name": "Pizza Pollo",
+            "description": "paradajky, syr, sunka, kuracie m\u00e4so, kukurica",
+            "alergens": "2, 3"
+        }
+    ],
+    "Napoje": [
+        {
+            "name": "Pivo Gambrinus",
+            "description": "0,5 L piva",
+            "alergens": "0"
+        },
+        {
+            "name": "Zelen\u00fd \u010daj",
+            "description": "klasick\u00fd zelen\u00fd \u010daj, \u010do viac doda\u0165",
+            "alergens": "9"
+        },
+        {
+            "name": "Voda",
+            "description": "\u010dist\u00e1 voda",
+            "alergens": "0"
+        }
+    ]
+}
