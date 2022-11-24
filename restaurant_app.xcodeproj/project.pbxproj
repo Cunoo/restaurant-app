@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		533F3A562929239E008EA8D8 /* ui_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533F3A552929239E008EA8D8 /* ui_extension.swift */; };
+		536D403D29085D7A009E8650 /* FoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D403C29085D7A009E8650 /* FoodsView.swift */; };
+		537ECAE8292EC00F003E9AEE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 537ECAE7292EC00F003E9AEE /* Alamofire */; };
+		537FB8D629258B4B005DFA8E /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FB8D529258B4B005DFA8E /* JSONManager.swift */; };
+		539B52382922E3BB000117F5 /* OrderMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B52372922E3BB000117F5 /* OrderMenu.swift */; };
 		53EEFB8528F0AB24007DCBBD /* restaurant_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEFB8428F0AB24007DCBBD /* restaurant_appApp.swift */; };
 		53EEFB8728F0AB24007DCBBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEFB8628F0AB24007DCBBD /* ContentView.swift */; };
 		53EEFB8928F0AB26007DCBBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EEFB8828F0AB26007DCBBD /* Assets.xcassets */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		533F3A552929239E008EA8D8 /* ui_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ui_extension.swift; sourceTree = "<group>"; };
+		536D403C29085D7A009E8650 /* FoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsView.swift; sourceTree = "<group>"; };
+		536D403E29085E42009E8650 /* restaurant-app-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "restaurant-app-Info.plist"; sourceTree = SOURCE_ROOT; };
+		537FB8D529258B4B005DFA8E /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		539B52372922E3BB000117F5 /* OrderMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenu.swift; sourceTree = "<group>"; };
 		53EEFB8128F0AB24007DCBBD /* restaurant_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = restaurant_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53EEFB8428F0AB24007DCBBD /* restaurant_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant_appApp.swift; sourceTree = "<group>"; };
 		53EEFB8628F0AB24007DCBBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53EEFB9A28F0B38C007DCBBD /* CodeScanner in Frameworks */,
+				537ECAE8292EC00F003E9AEE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +68,17 @@
 		53EEFB8328F0AB24007DCBBD /* restaurant_app */ = {
 			isa = PBXGroup;
 			children = (
+				536D403E29085E42009E8650 /* restaurant-app-Info.plist */,
 				53EEFB8428F0AB24007DCBBD /* restaurant_appApp.swift */,
 				53EEFB8628F0AB24007DCBBD /* ContentView.swift */,
 				53EEFB8828F0AB26007DCBBD /* Assets.xcassets */,
 				53EEFB8A28F0AB26007DCBBD /* Preview Content */,
 				53EEFB9B28F0BC97007DCBBD /* qr_code_scanner.swift */,
 				53EEFB9D28F0BEAC007DCBBD /* main_menu.swift */,
+				539B52372922E3BB000117F5 /* OrderMenu.swift */,
+				536D403C29085D7A009E8650 /* FoodsView.swift */,
+				537FB8D529258B4B005DFA8E /* JSONManager.swift */,
+				533F3A552929239E008EA8D8 /* ui_extension.swift */,
 			);
 			path = restaurant_app;
 			sourceTree = "<group>";
@@ -93,6 +109,7 @@
 			name = restaurant_app;
 			packageProductDependencies = (
 				53EEFB9928F0B38C007DCBBD /* CodeScanner */,
+				537ECAE7292EC00F003E9AEE /* Alamofire */,
 			);
 			productName = restaurant_app;
 			productReference = 53EEFB8128F0AB24007DCBBD /* restaurant_app.app */;
@@ -124,6 +141,7 @@
 			mainGroup = 53EEFB7828F0AB24007DCBBD;
 			packageReferences = (
 				53EEFB9828F0B38C007DCBBD /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				537ECAE6292EC00F003E9AEE /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 53EEFB8228F0AB24007DCBBD /* Products */;
 			projectDirPath = "";
@@ -152,9 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53EEFB9C28F0BC97007DCBBD /* qr_code_scanner.swift in Sources */,
+				537FB8D629258B4B005DFA8E /* JSONManager.swift in Sources */,
 				53EEFB8728F0AB24007DCBBD /* ContentView.swift in Sources */,
+				536D403D29085D7A009E8650 /* FoodsView.swift in Sources */,
 				53EEFB8528F0AB24007DCBBD /* restaurant_appApp.swift in Sources */,
 				53EEFB9E28F0BEAC007DCBBD /* main_menu.swift in Sources */,
+				539B52382922E3BB000117F5 /* OrderMenu.swift in Sources */,
+				533F3A562929239E008EA8D8 /* ui_extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +310,7 @@
 				DEVELOPMENT_TEAM = A5BZ8KTKDB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "restaurant-app-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -318,6 +341,7 @@
 				DEVELOPMENT_TEAM = A5BZ8KTKDB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "restaurant-app-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -361,6 +385,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		537ECAE6292EC00F003E9AEE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		53EEFB9828F0B38C007DCBBD /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -372,6 +404,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		537ECAE7292EC00F003E9AEE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 537ECAE6292EC00F003E9AEE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		53EEFB9928F0B38C007DCBBD /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53EEFB9828F0B38C007DCBBD /* XCRemoteSwiftPackageReference "CodeScanner" */;

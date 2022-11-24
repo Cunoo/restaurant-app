@@ -16,36 +16,30 @@ struct main_menu: View {
                 Button("PRIVOLAŤ BARMANA", action: {})
                     .padding()
                     .frame(width: 200, height: 50)
-                    .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
+                    .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255))
                     .clipShape(Capsule())
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
                 
                     
-                            NavigationLink(destination: Foods(), isActive: $isShowingDetailView) {
-                                Text("JEDALNICEK")
-                            }
+                    NavigationLink(destination: FoodsView(), isActive: $isShowingDetailView) {
+                            Text("JEDÁLNÍČEK")
+                        }
                             .padding()
                             .frame(width: 200, height: 50)
-                            .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
+                            .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255))
                             .clipShape(Capsule())
-                            .foregroundColor(.white)
-                            //.navigationTitle("Navigation")
+                            .foregroundColor(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
                         
-                
-                    /*.padding()
-                    .frame(width: 200, height: 50)
-                    .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
-                    .clipShape(Capsule())
-                    .foregroundColor(.white)*/
             
                 
                 Button("STAV OBJEDNÁVKY", action: {})
                 
                     .padding()
                     .frame(width: 200, height: 50)
-                    .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
+                    .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255))
                     .clipShape(Capsule())
-                    .foregroundColor(.white)
+                    //text color
+                    .foregroundColor(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
 
                 Button("ODÍSŤ") {
                     //go to qrcode scanner
@@ -60,13 +54,14 @@ struct main_menu: View {
 
                 }.padding()
                     .frame(width: 200, height: 50)
-                    .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
+                    .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255))
                     .clipShape(Capsule())
-                    .foregroundColor(.white)
+                    //.foregroundColor(.white)
+                    .foregroundColor(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
                 
         
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255)).ignoresSafeArea()
+            .background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255)).ignoresSafeArea()
         }
     }
 }
