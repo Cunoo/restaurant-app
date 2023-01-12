@@ -7,6 +7,35 @@
 
 import SwiftUI
 
+struct KeyboardResponsiveModifier: ViewModifier {
+  @State private var offset: CGFloat = 0
+
+  func body(content: Content) -> some View {
+    content
+      .padding(.bottom, offset)
+      .onAppear {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notif in
+          let value = notif.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+          let height = value.height
+          let bottomInset = UIApplication.shared.windows.first?.safeAreaInsets.bottom
+          self.offset = height - (bottomInset ?? 0)
+        }
+
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { notif in
+          self.offset = 0
+        }
+    }
+  }
+}
+
+extension View {
+  func keyboardResponsive() -> ModifiedContent<Self, KeyboardResponsiveModifier> {
+    return modifier(KeyboardResponsiveModifier())
+  }
+}
+
+
+
 // bit of View
 @ViewBuilder
 func buildInnerView(_ a: String, _ k: Food) -> some View {
@@ -36,32 +65,46 @@ struct OrderMenu: View {
      //@State private var FoodDescription: String
      var body: some View {
          VStack{
-            Text("Objednávka")
+            Text("  ")
                 .foregroundColor(Color(red: 225 / 255, green: 208 / 255, blue: 160 / 255))
-                .frame(minWidth: 0, maxHeight: 400, alignment: .topLeading)
-                .padding(45)
+                .padding(1)
+            
+             NavigationView{
+                 
              List{
                 ForEach(Array(decoding.keys.sorted()), id: \.self){ i in
                     ForEach(decoding[i]!){ k in
                         ForEach(an_order_list, id: \.self) { a in
                             buildInnerView(a, k)
+                            //Text("testtt")
                             //custom_order[a] = modify_orders
                         }
                         .onDelete(perform: delete)
+                        
+                        .listRowBackground(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
                     }
                     //cstom_order(custom_order)
                 }
-             }
+             }.background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))//.ignoresSafeArea()
                  // list background color
                  .listStyle(.plain)
+                 .listRowBackground(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
+                 
+                 
+             }.background(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255)).ignoresSafeArea()
+                 //.navigationTitle("Objednávka")
                  .toolbar {
                     EditButton()
                 }
              Spacer()
              
+             
              //modifying orders
             TextField("Chcete niečo zmeniť ?", text: $modify_orders)
-                .background(Color(red: 225 / 255, green: 208 / 255, blue: 160 / 255))
+                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                 .keyboardResponsive()
+                //.background(Color(red: 225 / 255, green: 208 / 255, blue: 160 / 255))
+                 .foregroundColor(.white)
                 .font(.system(size: 36, weight: .semibold))
                 .padding()
              Button("\(order_price)€"){
