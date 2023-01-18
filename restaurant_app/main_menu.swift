@@ -8,18 +8,30 @@ import SwiftUI
 
 struct main_menu: View {
     @State private var isShowingDetailView = false
-
+    @State private var presentAlert = false
     var body: some View {
         NavigationView {
             VStack{
                 //Buttons
-                Button("PRIVOLAŤ BARMANA", action: {})
+                Button("PRIVOLAŤ BARMANA"){
+                    //call barman
+                    presentAlert = true
+                    call_barman(url: "http://ordomi.4fan.cz/call_barman.php", "0", "1", "1")
+
+                }
+                    .alert(isPresented: $presentAlert) {
+                        Alert(
+                            title: Text("Objednavka"),
+                            message: Text("Barman je na ceste!"),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }
                     .padding()
                     .frame(width: 200, height: 50)
                     .background(Color(red: 233 / 255, green: 183 / 255, blue: 34 / 255))
                     .clipShape(Capsule())
                     .foregroundColor(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
-                
+                    .alert("Barman je na ceste",isPresented: $presentAlert) { }
                     
                     NavigationLink(destination: FoodsView(), isActive: $isShowingDetailView) {
                             Text("JEDÁLNÍČEK")

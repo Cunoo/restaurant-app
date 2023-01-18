@@ -73,3 +73,18 @@ func postMethod(url: String,_ orders_detail: String, price: Int){
     }
     
 }
+
+func call_barman(url: String,_ order_state: String, _ res_table: String, _ res_id : String){
+
+    let params = [
+    "state": "\(order_state)",
+    "res_table": "\(res_table)",
+    "restaurant_id": "\(res_id)"
+    ]
+    
+    AF.request(url, method: .post, parameters: params, encoder: JSONParameterEncoder.default).response { response in
+    debugPrint(response)
+    }
+    
+}
+

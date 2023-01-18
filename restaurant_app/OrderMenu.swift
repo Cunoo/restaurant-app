@@ -62,6 +62,7 @@ struct OrderMenu: View {
     //@State var index: Int
     @State var custom_order: [String:String]
     @State var modify_orders : String
+    @State var order_alert = false
      //@State private var FoodDescription: String
      var body: some View {
          VStack{
@@ -109,6 +110,8 @@ struct OrderMenu: View {
                 .padding()
              Button("\(order_price)€"){
                  //post_request()
+                 order_alert = true
+                 //send order_menu
                  postMethod(url: "http://ordomi.4fan.cz/post.php", modify_orders, price: order_price)
              }
                  .frame(width: 100, height: 45)
@@ -116,7 +119,13 @@ struct OrderMenu: View {
                      .clipShape(Capsule())
                      //.foregroundColor(.white)
                      .foregroundColor(Color(red: 71 / 255, green: 71 / 255, blue: 71 / 255))
-             
+                     .alert(isPresented: $order_alert) {
+                         Alert(
+                             title: Text("Objednavka"),
+                             message: Text("Objednávka úspešne objednaná!"),
+                             dismissButton: .default(Text("OK"))
+                         )
+                     }
                 
          }
          .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
