@@ -73,7 +73,7 @@ struct FoodsView: View {
     @State public var an_order_list : [String] = []
     //@State var an_order_list_price : [String] = []
     //@State private var isOrderMenuEmpty = false
-    @State private var order_price: Int = 0
+    @State private var order_price: Float = 0
     //@State var custom_order: [String: String] = [:]
     var body: some View {
         //Show menu
@@ -106,7 +106,7 @@ struct FoodsView: View {
                                 Spacer()
                                 Button("\(k.price)€") {
                                     an_order_list.append("\(k.food_menu_id)")
-                                    order_price += Int(k.price) ?? 0
+                                    order_price += Float(k.price) ?? 0
                                     
                                     
                                 }.frame(width: 50, height: 25)

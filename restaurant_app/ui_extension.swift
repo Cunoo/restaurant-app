@@ -8,20 +8,20 @@
 import Foundation
 import Alamofire
 ///FoodsView
-func calculate_items(_ item: [String]) -> Int {
-    var calculate: Int = 0
+func calculate_items(_ item: [String]) -> Float {
+    var calculate: Float = 0
     for i in decoding{
         //print(i.value)
         for j in i.value{
             //print(k.self)
             for k in item {
                 if (String(k) == j.food_menu_id) {
-                    calculate += Int(j.price)!
+                    calculate += Float(j.price)!
                 }
             }
         }
     }
-    return calculate
+    return floor(calculate * 10) / 10.0
 }
 //POST
 /*
@@ -60,7 +60,7 @@ func postMethod() {
     }
 }
 */
-func postMethod(url: String,_ orders_detail: String, price: Int){
+func postMethod(url: String,_ orders_detail: String, price: Float){
 
     let params = [
     "restaurant_id": "1",

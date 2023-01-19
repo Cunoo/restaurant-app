@@ -58,7 +58,7 @@ func buildInnerView(_ a: String, _ k: Food) -> some View {
 
 struct OrderMenu: View {
     @Binding var an_order_list : [String]
-    @Binding var order_price: Int
+    @Binding var order_price: Float
     //@State var index: Int
     @State var custom_order: [String:String]
     @State var modify_orders : String
@@ -108,7 +108,7 @@ struct OrderMenu: View {
                  .foregroundColor(.white)
                 .font(.system(size: 36, weight: .semibold))
                 .padding()
-             Button("\(order_price)€"){
+             Button("\(String(format: "%.2f", order_price))€"){
                  //post_request()
                  order_alert = true
                  //send order_menu
